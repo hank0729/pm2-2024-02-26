@@ -51,7 +51,7 @@ function openModal(area) {
                             label: 'Sensor Value',
                             backgroundColor: 'rgb(132, 99, 255)',
                             borderColor: 'rgb(132, 99, 255)',
-                            data: sensorValues,
+                            data: sensorValues + '°C',
                             fill: false,
                         },
                     ]
