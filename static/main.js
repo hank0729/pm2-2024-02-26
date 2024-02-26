@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-setInterval(updateFanStatus, 1000);
+setInterval(updateFanStatus, 5000);
 
 function updatePM2_5Status() {
     fetch('/data/fetch/pm/latest')
@@ -121,4 +121,4 @@ document.addEventListener('DOMContentLoaded', function() {
     updatePM2_5Status();
 });
 
-setInterval(updatePM2_5Status, 1000);
+setInterval(updatePM2_5Status, 5000);
