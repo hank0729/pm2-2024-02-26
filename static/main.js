@@ -48,10 +48,10 @@ function openModal(area) {
                         },
 
                         {
-                            label: 'Sensor Value',
+                            label: 'Sensor Value (°C)',
                             backgroundColor: 'rgb(132, 99, 255)',
                             borderColor: 'rgb(132, 99, 255)',
-                            data: sensorValues , '°C',
+                            data: sensorValues,
                             fill: false,
                         },
                     ]
