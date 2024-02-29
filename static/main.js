@@ -105,12 +105,15 @@ function updatePM2_5Status() {
     .then(data => {
         const pm2_5Value = data.pm;
         const pm2Element = document.getElementById('pm2');
-        
-        if (pm2_5Value < 1050) {
+        // 修改範圍
+        if (pm2_5Value <2050) {
+            // 綠燈
             pm2Element.style.backgroundColor = "rgba(0, 255, 0, 0.795)";
-        } else if (pm2_5Value >= 1050 && pm2_5Value < 3000) {
+        } else if (pm2_5Value >= 2050 && pm2_5Value < 3000) {
+            // 黃燈
             pm2Element.style.backgroundColor = "rgb(255, 238, 0)";
         } else if (pm2_5Value >= 3000) {
+            // 紅燈
             pm2Element.style.backgroundColor = "rgba(255, 0, 0, 0.795)";
         }
     })
