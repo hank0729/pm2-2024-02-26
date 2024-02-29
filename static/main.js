@@ -1,3 +1,4 @@
+// 時間設定
 var timeElement = document.getElementById("time");
 
 function updateTime() {
@@ -15,10 +16,10 @@ function updateTime() {
         (seconds < 10 ? "0" : "") + seconds;
     timeElement.textContent = formattedTime;
 }
-
+// 每秒更新
 updateTime();
 setInterval(updateTime, 1000);
-
+// 開啟曲線視窗
 function openModal(area) {
     document.getElementById('myModal').style.display = 'block';
     fetch('/data/fetch')
@@ -69,7 +70,7 @@ function openModal(area) {
 }
 
 
-
+// 關閉曲線視窗
 window.onclick = function(event) {
     var modal = document.getElementById('myModal');
     if (event.target == modal) {
@@ -77,6 +78,7 @@ window.onclick = function(event) {
     }
 }
 
+// 更新風扇狀態
 function updateFanStatus() {
     fetch('/data/fetch/fan/latest')
     .then(response => response.json())
@@ -96,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
+// 每5秒檢查一次
 setInterval(updateFanStatus, 5000);
-
+// 更新PM狀態
 function updatePM2_5Status() {
     fetch('/data/fetch/pm/latest')
     .then(response => response.json())
@@ -123,5 +125,5 @@ function updatePM2_5Status() {
 document.addEventListener('DOMContentLoaded', function() {
     updatePM2_5Status();
 });
-
+每五秒檢查PM狀態
 setInterval(updatePM2_5Status, 5000);
