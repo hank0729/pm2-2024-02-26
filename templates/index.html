@@ -10,13 +10,13 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     </head>
     <body>
-
+<!-- 曲線 -->
         <div id="myModal" class="modal" style="display:none;">
             <div class="modal-content">
                 <canvas id="dataChart" width="400" height="180"></canvas>
             </div>
         </div>
-
+<!-- 時間 -->
         <div style="text-align:center">
             <header class="header-main light font-size-xxxs">
                 <nav>
@@ -33,7 +33,7 @@
 <main>
 
     <div class="place-container">
-
+        <!-- 01卡片 -->
             <div class="place-card" data-area="room" onclick="openModal('room')">
                     <div class="image-overlay"> 
                         <img class="place-image opacity-xm" src="{{ url_for('static', filename='1ROOM.jpg') }}" alt="104">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
             </div>
-
+        <!-- 02卡片 -->
             <div class="place-card" data-area="dinner" onclick="openModal('dinner')">
                     <div class="image-overlay"> 
                         <img class="place-image opacity-xm" src="{{ url_for('static', filename='1ROOM.jpg') }}" alt="105">
@@ -52,7 +52,7 @@
                     </div>
             </div>
 
-
+        <!-- 03卡片 -->
             <div class="place-card" data-area="danger" onclick="openModal('danger')">
                     <div class="image-overlay"> 
                         <img class="place-image opacity-xm" src="{{ url_for('static', filename='1ROOM.jpg') }}" alt="106">
@@ -62,7 +62,7 @@
                     </div>
             </div>
         </div>
-
+        <!-- 01指示 -->
         <div style="display: inline-block;; white-space:nowrap;">
             <div style="display:flex; background-color: darkgray; color:black; width:210px; height:50px;   text-align: center; left:10%;  position: absolute;">
                 <h4 style="left:5%; top:15%;   position: absolute;">PM2.5指示燈</h4>
@@ -75,7 +75,7 @@
             </div>
             
         </div>
-
+        <!-- 02指示 -->
         <div style="display: inline-block; white-space:nowrap;">
             <div style="display:flex; background-color: darkgray; color:black; width:210px; height:50px; text-align: center; left:45%; position: absolute;">
                 <h4 style="left:5%; top:15%; position: absolute;">PM2.5指示燈</h4>
@@ -87,7 +87,7 @@
                 <div style="background-color: rgba(255, 0, 0, 0.795); width:30px;height:30px; left:65%; top:20%; position: absolute;" id="fan2"></div>
             </div>
         </div>
-
+        <!-- 03指示 -->
         <div style="display: inline-block;; white-space:nowrap;">
             <div style="display:flex; background-color: darkgray; color:black; width:210px; height:50px;   text-align: center; left:78%;  position: absolute;">
                 <h4 style="left:5%; top:15%;   position: absolute;">PM2.5指示燈</h4>
@@ -115,4 +115,3 @@
     </body>                                
 </html>
 
-<!-- (>3000 red 3000-1050 yello <1050 green) -->
