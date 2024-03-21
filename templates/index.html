@@ -2,11 +2,43 @@
 <html>
 <head>
     <title>區域狀況</title>
-    <meta http-equiv="refresh" content="60">
-    <meta charset="utf-8">
-    <meta name="description" content="A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+           <meta http-equiv="refresh" content="60">
+        <meta charset="utf-8">
+        <meta name="description" content="A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+        <style>
+            .place-container, .indicator-container {
+                display: flex;
+                justify-content: space-around; 
+                flex-wrap: wrap; 
+                margin-bottom: 20px; 
+            }
+
+            .place-card, .indicator-box {
+                flex: 1; 
+                max-width: calc(50% - 10px);
+                margin: 5px;
+            }
+
+            .indicator-box {
+                display: flex;
+                align-items: center; 
+                justify-content: space-between; 
+                padding: 0 20px; 
+            }
+
+            .indicator-label {
+                flex-grow: 1;
+            }
+
+            .indicator-light {
+                width: 30px;
+                height: 30px;
+                border-radius: 15px; 
+            }
+        </style>
 </head>
 <body>
     <!-- 曲線 -->
@@ -32,8 +64,8 @@
     <main>
         <div class="place-container">
             <!-- 卡片 -->
-            <div class="place-card" data-area="room" onclick="openModal('room')">
-                <div class="image-overlay"> 
+             <div class="place-card" data-area="room" onclick="openModal('room')">
+                  <div class="image-overlay"> 
                     <img class="place-image opacity-xm" src="{{ url_for('static', filename='1ROOM.jpg') }}" alt="104">
                     <div class="overlay-text-mid-bot dark">
                         <h1>01</h1>
@@ -42,7 +74,7 @@
             </div>
             
             <div class="place-card" data-area="dinner" onclick="openModal('dinner')">
-                <div class="image-overlay"> 
+                 <div class="image-overlay"> 
                     <img class="place-image opacity-xm" src="{{ url_for('static', filename='1ROOM.jpg') }}" alt="105">
                     <div class="overlay-text-mid-bot dark">
                         <h1>02</h1>
@@ -51,20 +83,27 @@
             </div>
 
             <!-- 指示 -->
-            <div class="indicator" id="indicator1" style="left:10%;">
-                <h4>PM2.5指示燈</h4>
-                <div class="indicator-light" id="pm1" style="background-color: rgba(0, 255, 0, 0.795);"></div>
-                <h4>風扇狀態</h4>
-                <div class="indicator-light" id="fan1" style="background-color: rgba(255, 0, 0, 0.795);"></div>
-            </div>
+            <div class="indicator-container">
+                <!-- 01指示 -->
+                <div class="indicator-box">
+                    <h4 class="indicator-label">PM2.5狀態</h4>
+                    <div class="indicator-light" style="background-color: rgba(0, 255, 0, 0.795);" id="pm1"></div>
+                </div>
+                <div class="indicator-box">
+                    <h4 class="indicator-label">風扇狀態</h4>
+                    <div class="indicator-light" style="background-color: rgba(255, 0, 0, 0.795);" id="fan1"></div>
+                </div>
 
-            <div class="indicator" id="indicator2" style="left:45%;">
-                <h4>PM2.5指示燈</h4>
-                <div class="indicator-light" id="pm2" style="background-color: rgb(255, 238, 0);"></div>
-                <h4>風扇狀態</h4>
-                <div class="indicator-light" id="fan2" style="background-color: rgba(255, 0, 0, 0.795);"></div>
+                <!-- 02指示 -->
+                <div class="indicator-box">
+                    <h4 class="indicator-label">PM2.5狀態</h4>
+                    <div class="indicator-light" style="background-color: rgb(255, 238, 0);" id="pm2"></div>
+                </div>
+                <div class="indicator-box">
+                    <h4 class="indicator-label">風扇狀態</h4>
+                    <div class="indicator-light" style="background-color: rgba(255, 0, 0, 0.795);" id="fan2"></div>
+                </div>
             </div>
-        </div>
 
         <div class="pm-image-container">
             <img src="./static/PM.jpg" alt="" id="img-room">
